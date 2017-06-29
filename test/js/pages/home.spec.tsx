@@ -21,7 +21,7 @@ describe('Home', function() {
 	describe('test', () => {
 
 		it('Should do something', () => {
-
+			console.log(Home);
 		});
 
 	});

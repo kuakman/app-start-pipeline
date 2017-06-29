@@ -4,6 +4,6 @@
 **/
 import $ from 'jquery';
 
-$(body).append('<h3>Hello World!</h3>');
+console.log($);
 
-export default { value: "Hello World" };
+export default { value: 'Hello World' };

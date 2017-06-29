@@ -6,16 +6,18 @@ module.exports = function(config) {
   config.set({
     basePath: '.',
     frameworks: ['systemjs', 'mocha', 'chai', 'sinon'],
-    files: ['test/**/*.+(ts|tsx|js)'],
+    files: ['test/**/*.spec.+(ts|tsx|js)'],
     systemjs: {
         configFile: './src/js/config.js',
+        useBundles: true,
         config: {
             typescriptOptions: { tsconfig: true },
-            useBundles: true,
             paths: {
                 typescript: 'node_modules/typescript',
                 ts: 'node_modules/plugin-typescript/lib/plugin.js',
-                systemjs: 'node_modules/systemjs/dist/system.src.js'
+                systemjs: 'node_modules/systemjs/dist/system.src.js',
+                "libraries/": "src/js/libraries/",
+                "pages/": "src/js/pages/"
             },
             packages: {
                 typescript: {
@@ -25,9 +27,10 @@ module.exports = function(config) {
             },
             transpiler: 'ts'
         },
-        serve: [
+        serveFiles: [
             'node_modules/typescript/lib/typescript.js',
-            'src/**/*.+(ts|tsx)',
+            'node_modules/systemjs/dist/*.map',
+            'src/**/*.+(ts|tsx|js|map)',
             'tsconfig.json'
         ],
         includeFiles: [
@@ -45,7 +48,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     singleRun: false,
     concurrency: Infinity
   })

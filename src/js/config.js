@@ -4,12 +4,14 @@
 **/
 System.config({
 	baseURL: '/',
-	paths: {},
+	paths: {
+		"pages/": "js/pages/"
+	},
 	packages: {
 		"pages": { "defaultExtension": "tsx" }
 	},
 	bundles: {
-		'libraires/test.js': [
+		'libraries/test.js': [
 			'jquery',
 			'bootstrap'
 		]
