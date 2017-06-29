@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "EsNext",
+        "module": "system",
+        "jsx": "react",
+        "sourceMap": true,
+        "removeComments": true,
+        "strict": false,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "experimentalDecorators": true,
+        "baseUrl": "./src",
+        "paths": { "*": ["js/*"] },
+        "typeRoots": ["./node_modules/@types"]
+    },
+    "exclude": [
+        "./src/js/libraries/*.js"
+    ]
+}
