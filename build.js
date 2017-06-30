@@ -1,18 +1,12 @@
 /**
-*	Build Process
+*	Jspm Dependencies Bundle
 *	@author Patricio Ferreira <3dimentionar@gmail.com>
 **/
-let path = require('path');
-let Builder = require('systemjs-builder');
-let builder = new Builder('.', './src/js/config.js');
+let extend = require('extend');
+let pkg = extend(true, { profile: (process.env.profile || "development") }, require('./package.json'));
+let profile = pkg.environment[pkg.profile];
+let jspm = new require('jspm');
+let builder = new jspm.Builder();
 
-builder.config({
-	map: {
-		jquery: 'node_modules/jquery/dist/jquery.js',
-		bootstrap: 'node_modules/bootstrap/dist/js/bootstrap.js'
-	}
-});
-
-builder.bundle('./src/js/libraries.js',
-	'./src/js/libraries/test.js',
-	{ minify: false, mangle: false, sourceMaps: true });
+builder.config(profile.config);
+builder.bundle(profile.bundles, profile.output, profile.options);

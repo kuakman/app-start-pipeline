@@ -1,7 +1,8 @@
 /**
 *	@module pages
-*	@author Patricio Ferreira <3dimentionar@gmail.com>
 **/
+import React from 'react';
+import * as enzyme from 'enzyme';
 import Home from 'pages/home';
 
 describe('Home', function() {
@@ -21,7 +22,7 @@ describe('Home', function() {
 	describe('test', () => {
 
 		it('Should do something', () => {
-			console.log(Home);
+			let wrapper = enzyme.shallow(<Home />);
 		});
 
 	});

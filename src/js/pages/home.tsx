@@ -1,9 +1,19 @@
 /**
 *	@module pages
-*	@author Patricio Ferreira <3dimentionar@gmail.com>
 **/
 import $ from 'jquery';
+import 'bootstrap';
+import React from 'react';
 
-console.log($);
+class Home extends React.Component {
 
-export default { value: 'Hello World' };
+	/**
+	*	Render Component
+	**/
+	render(): any {
+		return (<div className = "container"></div>);
+	}
+
+}
+
+export default Home;

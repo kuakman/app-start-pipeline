@@ -2,8 +2,7 @@
 
 ![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)
 
-Boilerplate code that setups test - dev and production piplelines for web application
-development.
+Boilerplate code that setups test - dev and production pipelines for web application development.
 
 ### Technology Stack
 

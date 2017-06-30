@@ -1,7 +1,10 @@
 /**
-*	Third Party Libraries
-*	@author Patricio Ferreira <3dimentionar@gmail.com>
+*	Third Party Libraries for Production
+*	@author Patricio Ferreira <patricio.ferreira@build.com>
 **/
-import jquery from 'jquery';
-window.jQuery = jquery;
+import 'bluebird';
+import 'jquery';
 import 'bootstrap';
+import 'react';
+import 'react-dom';
+import 'redux';

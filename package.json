@@ -2,13 +2,14 @@
   "name": "app-start-pipeline",
   "version": "1.0.0",
   "description": "Application Pipeline Starter",
-  "main": "index.js",
+  "main": "build.js",
   "scripts": {
+    "jspm": "jspm",
     "karma": "karma start",
     "build": "node build.js",
-    "test": "cross-env profile=test npm run build && npm run karma",
-    "development": "cross-env profile=development npm run build",
-    "prod": "cross-env profile=production npm run build"
+    "test": "cross-env profile=test npm run build",
+    "dev": "cross-env profile=dev npm run build",
+    "prod": "cross-env profile=prod npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,21 +22,17 @@
   ],
   "author": "Patricio Ferreira <3dimentionar@gmail.com>",
   "license": "UNLICENSED",
-  "dependencies": {
-    "bluebird": "3.5.0",
-    "bootstrap": "3.3.7",
-    "jquery": "3.2.1",
-    "systemjs": "0.20.14"
-  },
   "devDependencies": {
     "@types/bootstrap": "3.3.34",
     "@types/chai": "4.0.1",
     "@types/jquery": "3.2.5",
     "@types/mocha": "2.2.41",
+    "@types/react": "15.0.33",
     "@types/sinon": "2.3.2",
     "chai": "4.0.2",
     "cross-env": "5.0.1",
     "extend": "3.0.1",
+    "jspm": "0.16.53",
     "karma": "1.7.0",
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "2.2.0",
@@ -48,9 +45,78 @@
     "karma-systemjs": "github:adamwillden/karma-systemjs#systemjs-0.20",
     "lite-server": "2.3.0",
     "mocha": "3.4.2",
+    "phantomjs-polyfill": "0.0.2",
     "plugin-typescript": "7.0.6",
     "sinon": "2.3.6",
-    "systemjs-builder": "0.16.9",
     "typescript": "2.4.1"
+  },
+  "environment": {
+    "test": {
+      "bundles": "src/js/libraries.js + src/js/libraries-dev.js + src/js/libraries-test.js",
+      "output": "src/js/libraries/libraries-test.js",
+      "config": {
+        "map": {
+          "plugin-babel": "src/jspm/npm/systemjs-plugin-babel@0.0.25.js",
+          "systemjs-babel-build": "src/jspm/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+        },
+        "transpiler": "plugin-babel"
+      },
+      "options": {
+        "mangle": false
+      }
+    },
+    "dev": {
+      "bundles": "src/js/libraries.js + src/js/libraries-dev.js",
+      "output": "src/js/libraries/libraries-dev.js",
+      "config": {
+        "map": {
+          "plugin-babel": "src/jspm/npm/systemjs-plugin-babel@0.0.25.js",
+          "systemjs-babel-build": "src/jspm/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+        },
+        "transpiler": "plugin-babel"
+      },
+      "options": {
+        "mangle": false
+      }
+    },
+    "prod": {
+      "bundles": "src/js/libraries.js",
+      "output": "src/js/libraries/libraries-prod.js",
+      "config": {},
+      "options": {
+        "minify": true
+      }
+    }
+  },
+  "jspm": {
+    "directories": {
+      "format": "esm",
+      "packages": "src/jspm"
+    },
+    "configFile": "src/js/config.js",
+    "dependencies": {
+      "bluebird": "npm:bluebird@3.5.0",
+      "bootstrap": "github:twbs/bootstrap@3.3.7",
+      "jquery": "npm:jquery@3.2.1",
+      "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
+      "react": "npm:react@15.6.1",
+      "react-dom": "npm:react-dom@15.6.1",
+      "redux": "npm:redux@3.7.1",
+      "redux-logger": "npm:redux-logger@3.0.6"
+    },
+    "devDependencies": {
+      "enzyme": "npm:enzyme@2.9.1",
+      "react-addons-test-utils": "npm:react-addons-test-utils@15.6.0",
+      "react-test-renderer": "npm:react-test-renderer@15.6.1"
+    },
+    "overrides": {
+      "npm:enzyme@2.9.1": {
+        "map": {
+          "react/addons": "@empty",
+          "react/lib/ExecutionEnvironment": "@empty",
+          "react/lib/ReactContext": "@empty"
+        }
+      }
+    }
   }
 }
