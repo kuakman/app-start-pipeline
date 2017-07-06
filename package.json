@@ -46,7 +46,6 @@
     "karma-systemjs": "github:adamwillden/karma-systemjs#systemjs-0.20",
     "lite-server": "2.3.0",
     "mocha": "3.4.2",
-    "phantomjs-polyfill": "0.0.2",
     "plugin-typescript": "7.0.6",
     "sinon": "2.3.6",
     "typescript": "2.4.1"

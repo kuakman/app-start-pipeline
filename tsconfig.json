@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "EsNext",
+        "target": "es5",
         "module": "system",
         "jsx": "react",
         "sourceMap": true,
@@ -11,9 +11,12 @@
         "experimentalDecorators": true,
         "baseUrl": "./src",
         "paths": { "*": ["js/*"] },
+        "lib": ["DOM", "ES6"],
         "typeRoots": ["./node_modules/@types"]
     },
     "exclude": [
-        "./src/js/libraries/*.js"
+        "./src/js/libraries/*.js",
+        "./src/jspm",
+        "node_modules"
     ]
 }

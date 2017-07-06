@@ -21,7 +21,6 @@ module.exports = function (config) {
 				"tsconfig.json"
 			],
 			includeFiles: [
-				"node_modules/phantomjs-polyfill/bind-polyfill.js",
 				"src/jspm/npm/bluebird@3.5.0/js/browser/bluebird.min.js"
 			]
 		},
@@ -34,9 +33,9 @@ module.exports = function (config) {
 		},
 		port: 9876,
 		colors: true,
-		logLevel: config.LOG_INFO,
+		logLevel: config.LOG_DEBUG,
 		autoWatch: true,
-		browsers: ['Chrome'],
+		browsers: ['PhantomJS'],
 		singleRun: false,
 		concurrency: Infinity
 	});
