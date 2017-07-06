@@ -8,17 +8,23 @@ Boilerplate code that setups test - dev and production pipelines for web applica
 
 ##### Front End
 * SystemJS
+* Bluebird
 * Bootstrap
 * jQuery
-* Bluebird
 * React
 * ReactDOM
+* React-Logger
+* Redux
+* Redux-Actions
+* Redux-Promise
+* Redux Socket.io
+* Socket.io
 
 ##### Transpiler
 * Typescript
 
 ##### Bundler
-* SystemJS Builder
+* SystemJS JSPM Builder
 
 ##### Unit Testing
 * Karma
