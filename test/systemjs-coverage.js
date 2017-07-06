@@ -63,7 +63,7 @@ var process = function(tsconfig, log, content, file, done) {
 
 	sourceMap.sources[0] = path.basename(file.originalPath);
 	sourceMap.sourcesContent = [content];
-	sourceMap.file = path.basename(file.path);
+	sourceMap.file = file.path;
 	file._preprocessedSourceMap = sourceMap;
 	file._preprocessedSource = result.outputText;
 
