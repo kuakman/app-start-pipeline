@@ -7,17 +7,15 @@ import Home from 'pages/home';
 
 describe('Home', function() {
 
-	before(() => {
-		this.sandbox = sinon.sandbox.create();
-	});
+	let sandbox = sinon.sandbox.create();
+
+	before(() => {});
 
 	beforeEach(() => {});
 
 	afterEach(() => {});
 
-	after(() => {
-		delete this.sandbox;
-	});
+	after(() => {});
 
 	describe('test', () => {
 

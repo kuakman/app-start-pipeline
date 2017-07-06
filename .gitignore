@@ -10,3 +10,6 @@ src/js/libraries
 src/jspm
 dist
 coverage
+
+# Temp
+.DS_Store

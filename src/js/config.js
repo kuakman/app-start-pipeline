@@ -1,3 +1,7 @@
+/**
+ *	SystemJS Configuration - Profile Production
+ *	@author Patricio Ferreira <3dimentionar@gmail.com>
+ **/
 System.config({
   baseURL: "/",
   defaultJSExtensions: false,

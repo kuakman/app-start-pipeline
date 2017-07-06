@@ -5,7 +5,14 @@ import $ from 'jquery';
 import 'bootstrap';
 import React from 'react';
 
-class Home extends React.Component {
+interface IComponent {}
+
+class Home extends React.Component<IComponent, object> {
+
+	constructor(props: object, attrs: object) {
+		super(props, attrs)
+		return this;
+	}
 
 	/**
 	*	Render Component

@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/bootstrap": "3.3.34",
     "@types/chai": "4.0.1",
+    "@types/enzyme": "^2.8.1",
     "@types/jquery": "3.2.5",
     "@types/mocha": "2.2.41",
     "@types/react": "15.0.33",
@@ -86,7 +87,9 @@
     "prod": {
       "bundles": "js/libraries",
       "output": "src/js/libraries/libraries-prod.js",
-      "config": {},
+      "config": {
+        "defaultJSExtensions": true
+      },
       "options": {
         "minify": true,
         "normalize": true
