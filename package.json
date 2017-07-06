@@ -47,8 +47,11 @@
     "lite-server": "2.3.0",
     "mocha": "3.4.2",
     "plugin-typescript": "7.0.6",
+    "remap-istanbul": "^0.9.5",
     "sinon": "2.3.6",
-    "typescript": "2.4.1"
+    "systemjs-istanbul-hook": "^0.1.1",
+    "typescript": "2.4.1",
+    "underscore": "^1.8.3"
   },
   "environment": {
     "test": {

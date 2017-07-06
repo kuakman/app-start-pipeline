@@ -4,6 +4,7 @@
         "module": "system",
         "jsx": "react",
         "sourceMap": true,
+        "inlineSourceMap": false,
         "removeComments": true,
         "strict": false,
         "noImplicitAny": true,

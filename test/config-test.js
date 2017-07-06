@@ -7,6 +7,9 @@ System.config({
 	defaultExtension: true,
 	transpiler: "ts",
 	typescriptOptions: { tsconfig: true },
+	meta: {
+		'pages/*': { format: 'register' }
+	},
 	paths: {
 		typescript: "node_modules/typescript",
 		ts: "node_modules/plugin-typescript/lib/plugin.js",
