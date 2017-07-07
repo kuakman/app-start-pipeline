@@ -21,6 +21,9 @@ Boilerplate code that setups test - dev and production pipelines for web applica
 ##### Transpiler
 * Typescript
 
+##### Template engine
+* Pug
+
 ##### Bundler
 * SystemJS
 * JSPM
