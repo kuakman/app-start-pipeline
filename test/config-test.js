@@ -32,6 +32,7 @@ System.config({
 		"bootstrap": "github:twbs/bootstrap@3.3.7.js",
 		"enzyme": "npm:enzyme@2.9.1.js",
 		"jquery": "npm:jquery@3.2.1.js",
+		"less": "npm:systemjs-less-plugin@2.0.0.js",
 		"react": "npm:react@15.6.1.js",
 		"react-addons-test-utils": "npm:react-addons-test-utils@15.6.0.js",
 		"react-dom": "npm:react-dom@15.6.1.js",
@@ -46,8 +47,9 @@ System.config({
 	bundles: {
 		"libraries/libraries-test.js": [
 			"bluebird",
-			"jquery",
 			"bootstrap",
+			"jquery",
+			"less",
 			"react",
 			"react-dom",
 			"redux",

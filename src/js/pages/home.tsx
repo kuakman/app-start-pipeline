@@ -5,6 +5,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 interface IComponent {}
 
@@ -15,15 +16,13 @@ class Home extends React.Component<IComponent, object> {
 		return this;
 	}
 
-	somemethod(): string {
-		return "Hello World";
+	render(): any {
+		return (<div className = "home"></div>);
 	}
 
-	/**
-	*	Render Component
-	**/
-	render(): any {
-		return (<div className = "container"></div>);
+	static bootstrap() {
+		ReactDOM.render(<Home />, $('.container')[0]);
+		return this;
 	}
 
 }

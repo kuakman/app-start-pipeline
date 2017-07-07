@@ -2,12 +2,12 @@
   "name": "app-start-pipeline",
   "version": "1.0.0",
   "description": "Application Pipeline Starter",
-  "main": "build.js",
+  "main": "scripts/build.js",
   "scripts": {
     "jspm": "jspm",
-    "test": "cross-env profile=test node build.js && karma start",
-    "dev": "cross-env profile=dev node build.js && lite-server -c ./dev-server.js",
-    "release": "cross-env profile=prod node build.js"
+    "test": "cross-env profile=test node scrtips/build.js && karma start",
+    "dev": "cross-env profile=dev node scrtips/build.js && lite-server -c ./dev-server.js",
+    "release": "cross-env profile=prod node scrtips/build.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "lite-server": "2.3.0",
     "mocha": "3.4.2",
     "plugin-typescript": "7.0.6",
+    "pug": "2.0.0-rc.2",
     "remap-istanbul": "0.9.5",
     "sinon": "2.3.6",
     "typescript": "2.4.1",
@@ -107,6 +108,7 @@
       "bluebird": "npm:bluebird@3.5.0",
       "bootstrap": "github:twbs/bootstrap@3.3.7",
       "jquery": "npm:jquery@3.2.1",
+      "less": "npm:systemjs-less-plugin@2.0.0",
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
       "react": "npm:react@15.6.1",
       "react-dom": "npm:react-dom@15.6.1",

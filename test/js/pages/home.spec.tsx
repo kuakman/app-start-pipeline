@@ -26,11 +26,6 @@ describe('Home', function() {
 			assert.equal(result.length, 1);
 		});
 
-		it('Should call method somemethod()', () => {
-			let home = new Home();
-			assert.equal(home.somemethod(), "Hello World");
-		});
-
 	});
 
 });

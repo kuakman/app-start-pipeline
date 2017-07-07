@@ -19,6 +19,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.7",
     "enzyme": "npm:enzyme@2.9.1",
     "jquery": "npm:jquery@3.2.1",
+    "less": "npm:systemjs-less-plugin@2.0.0",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
     "react": "npm:react@15.6.1",
     "react-addons-test-utils": "npm:react-addons-test-utils@15.6.0",
@@ -710,6 +711,9 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1"
+    },
+    "npm:systemjs-less-plugin@2.0.0": {
+      "css": "github:systemjs/plugin-css@0.1.35"
     },
     "npm:ua-parser-js@0.7.13": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
