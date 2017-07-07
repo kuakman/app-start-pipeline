@@ -1,5 +1,6 @@
 /**
 *	@module pages
+*	@author kuakman <3dimentionar@gmail.com>
 **/
 import $ from 'jquery';
 import 'bootstrap';

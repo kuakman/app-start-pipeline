@@ -2,9 +2,7 @@
 
 ![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)
 
-Boilerplate code that setups test - dev and production pipelines for web application development.
-
-### Technology Stack
+Boilerplate code that setups test - dev and production pipelines for web application development using the following technology stack:
 
 ##### Front End
 * SystemJS
@@ -24,19 +22,21 @@ Boilerplate code that setups test - dev and production pipelines for web applica
 * Typescript
 
 ##### Bundler
-* SystemJS JSPM Builder
+* SystemJS
+* JSPM
 
 ##### Unit Testing
 * Karma
 * Mocha
 * Chai
 * Sinon
+* Enzyme
 
-### Commands
+## Commands
 
-* ```npm run build```
-* ```npm run test```
-* ```npm run dev```
-* ```npm run prod```
+* ```npm run jspm``` Access to the local jspm command line
+* ```npm run test``` Run Unit Test and Code Coverage
+* ```npm run dev``` Spin up a development environment
+* ```npm run release``` Build & optimize your code ready for production
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://nahuel.io)
