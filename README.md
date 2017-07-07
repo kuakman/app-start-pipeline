@@ -13,6 +13,7 @@ Boilerplate code that setups test - dev and production pipelines for web applica
 * ReactDOM
 * React-Logger
 * Redux
+* ImmutableJs
 * Redux-Actions
 * Redux-Promise
 * Redux Socket.io
