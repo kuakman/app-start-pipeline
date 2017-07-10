@@ -1,5 +1,5 @@
 /**
-*	Dev Server Configuration
+*	Server Configuration
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 module.exports = {

@@ -1,5 +1,5 @@
 /**
-*	@module pages.home
+*	@module pages.search
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 import $ from 'jquery';
@@ -17,18 +17,18 @@ interface IComponent {
 }
 
 /**
-*	Class HomePage
-*	@class pages.home.HomePage
+*	Class SearchPage
+*	@class pages.search.SearchPage
 *	@extends React.Component
 **/
-class HomePage extends React.Component<IComponent, object> {
+class SearchPage extends React.Component<IComponent, object> {
 
 	/**
 	*	Constructor
 	*	@constructor
 	*	@param {object} [props] Component Properties
 	*	@param {object} [attrs] Component Attributes
-	*	@return {pages.home.HomePage}
+	*	@return {pages.search.SearchPage}
 	**/
 	constructor(props?: object, attrs?: object) {
 		return super(props, attrs);
@@ -37,7 +37,7 @@ class HomePage extends React.Component<IComponent, object> {
 	/**
 	*	Component Will Mount Handler
 	*	@public
-	*	@return {pages.home.HomePage}
+	*	@return {pages.search.SearchPage}
 	**/
 	componentWillMount() {
 		return this;
@@ -49,7 +49,7 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@return {any}
 	**/
 	render(): any {
-		return (<div className = "home">{this.props.message}</div>);
+		return (<div className = "search">{this.props.message}</div>);
 	}
 
 	/**
@@ -70,7 +70,7 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@return {Function}
 	**/
 	static bootstrap(props?: object, attrs?: object): Function {
-		ReactDOM.render(<HomePage {...props} />, $('.container')[0]);
+		ReactDOM.render(<SearchPage {...props} />, $('.container')[0]);
 		return this;
 	}
 
@@ -79,9 +79,9 @@ class HomePage extends React.Component<IComponent, object> {
 /**
 *	HMR Hot Reload
 **/
-export function __reload(HomePage) {
+export function __reload(SearchPage) {
 	ReactDOM.unmountComponentAtNode($('.container')[0]);
-    HomePage.default.bootstrap(hot._state);
+    SearchPage.default.bootstrap(hot._state);
 }
 
-export default HomePage;
+export default SearchPage;
