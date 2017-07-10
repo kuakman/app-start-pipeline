@@ -5,18 +5,24 @@
   "main": "scripts/build.js",
   "scripts": {
     "jspm": "jspm",
+    "pug": "pug",
+    "clean": "node scripts/clean.js",
+    "watch": "chokidar-socket-emitter -l 9080",
     "test": "cross-env profile=test node scripts/build.js && karma start",
-    "dev": "cross-env profile=dev node scripts/build.js && lite-server -c ./dev-server.js",
-    "release": "cross-env profile=prod node scripts/build.js"
+    "dev": "cross-env profile=dev node scripts/build.js && npm run start",
+    "prod": "cross-env profile=prod node scripts/build.js",
+    "start": "lite-server -c ./scripts/dev-server.js"
   },
   "repository": {
     "type": "git",
     "url": "none"
   },
   "keywords": [
-    "app",
     "pipeline",
-    "starter"
+    "systemjs",
+    "typescript",
+    "react",
+    "redux"
   ],
   "author": "Patricio Ferreira <3dimentionar@gmail.com>",
   "license": "UNLICENSED",
@@ -29,6 +35,7 @@
     "@types/react": "15.0.33",
     "@types/sinon": "2.3.2",
     "chai": "4.0.2",
+    "chokidar-socket-emitter": "0.6.0",
     "cross-env": "5.0.1",
     "extend": "3.0.1",
     "fs-extra": "3.0.1",
@@ -46,7 +53,7 @@
     "lite-server": "2.3.0",
     "mocha": "3.4.2",
     "plugin-typescript": "7.0.6",
-    "pug": "2.0.0-rc.2",
+    "pug-cli": "git+ssh://git@github.com/pugjs/pug-cli#master",
     "remap-istanbul": "0.9.5",
     "sinon": "2.3.6",
     "typescript": "2.4.1",
@@ -87,7 +94,7 @@
     },
     "prod": {
       "bundles": "js/libraries",
-      "output": "src/js/libraries/libraries-prod.js",
+      "output": "src/js/libraries/libraries.js",
       "config": {
         "defaultJSExtensions": true
       },
@@ -107,7 +114,7 @@
     "dependencies": {
       "bluebird": "npm:bluebird@3.5.0",
       "bootstrap": "github:twbs/bootstrap@3.3.7",
-      "immutable": "npm:immutable@^3.8.1",
+      "immutable": "npm:immutable@3.8.1",
       "jquery": "npm:jquery@3.2.1",
       "less": "npm:systemjs-less-plugin@2.0.0",
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
@@ -123,7 +130,8 @@
     "devDependencies": {
       "enzyme": "npm:enzyme@2.9.1",
       "react-addons-test-utils": "npm:react-addons-test-utils@15.6.0",
-      "react-test-renderer": "npm:react-test-renderer@15.6.1"
+      "react-test-renderer": "npm:react-test-renderer@15.6.1",
+      "systemjs-hot-reloader": "npm:systemjs-hot-reloader@1.1.0"
     },
     "overrides": {
       "npm:enzyme@2.9.1": {

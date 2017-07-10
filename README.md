@@ -39,6 +39,7 @@ Boilerplate code that setups test - dev and production pipelines for web applica
 ## Commands
 
 * ```npm run jspm``` Access to the local jspm command line
+* ```npm run clean -- [all|test|dev|prod]``` Clean libraries bundle files for the specified environment.
 * ```npm run test``` Run Unit Test and Code Coverage
 * ```npm run dev``` Spin up a development environment
 * ```npm run release``` Build & optimize your code ready for production

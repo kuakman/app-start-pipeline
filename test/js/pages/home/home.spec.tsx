@@ -1,12 +1,12 @@
 /**
-*	@module pages
+*	@module pages.home
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 import React from 'react';
 import * as enzyme from 'enzyme';
-import Home from 'pages/home';
+import HomePage from 'pages/home/home';
 
-describe('pages.Home', function() {
+describe('pages.home.HomePage', function() {
 
 	let assert = chai.assert;
 	let sandbox = sinon.sandbox.create();
@@ -19,7 +19,7 @@ describe('pages.Home', function() {
 	describe('render()', () => {
 
 		it('Should Shallow render', () => {
-			let wrapper = enzyme.shallow(<Home />);
+			let wrapper = enzyme.shallow(<HomePage />);
 			let result = wrapper.find('div');
 			assert.equal(result.length, 1);
 		});
@@ -29,7 +29,7 @@ describe('pages.Home', function() {
 	describe('static#bootstrap()', () => {
 
 		it('Should Bootstrap Component', () => {
-			assert.strictEqual(Home.bootstrap(), Home);
+			assert.strictEqual(HomePage.bootstrap(), HomePage);
 		});
 
 	});

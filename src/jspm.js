@@ -25,6 +25,7 @@ System.config({
     "redux-promise": "npm:redux-promise@0.5.3",
     "redux-socket.io": "npm:redux-socket.io@1.4.0",
     "socket.io-client": "npm:socket.io-client@2.0.3",
+    "systemjs-hot-reloader": "npm:systemjs-hot-reloader@1.1.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
@@ -705,6 +706,9 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1"
+    },
+    "npm:systemjs-hot-reloader@1.1.0": {
+      "systemjs-hmr": "npm:systemjs-hmr@2.0.9"
     },
     "npm:systemjs-less-plugin@2.0.0": {
       "css": "github:systemjs/plugin-css@0.1.35"

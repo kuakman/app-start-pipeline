@@ -1,0 +1,11 @@
+if profile == "dev"
+	| <script>
+	| System.import('systemjs-hot-reloader').then((connect) => {
+	| connect({ host: '//localhost:9080' });
+	block bootstrap
+	| });
+	|</script>
+else
+	| <script>
+	block bootstrap
+	| </script>

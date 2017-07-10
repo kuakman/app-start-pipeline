@@ -4,28 +4,27 @@
 **/
 System.config({
 	baseURL: '/',
-	defaultExtension: true,
+	defaultJSExtensions: false,
 	transpiler: "ts",
 	typescriptOptions: { tsconfig: true },
 	meta: {
-		'pages/*': { format: 'register' },
-		'store/*': { format: 'register' },
-		'service/*': { format: 'register' },
-		'ui/*': { format: 'register' },
-		'util/*': { format: 'register' }
+		'pages/*': { format: 'register', loader: "ts" },
+		'store/*': { format: 'register', loader: "ts" },
+		'service/*': { format: 'register', loader: "ts" },
+		'ui/*': { format: 'register', loader: "ts" },
+		'util/*': { format: 'register', loader: "ts" }
 	},
 	paths: {
 		typescript: "node_modules/typescript",
 		ts: "node_modules/plugin-typescript/lib/plugin.js",
-		systemjs: "src/jspm/system.src.js",
-		"github:*": "src/jspm/github/*",
-		"npm:*": "src/jspm/npm/*",
-		"libraries/": "src/js/libraries/",
-		"pages/": "src/js/pages/",
-		"ui/": "src/js/ui/",
-		"store/": "src/js/store/",
-		"service/": "src/js/service/",
-		"util/": "src/js/util/"
+		"github:*": "jspm/github/*",
+		"npm:*": "jspm/npm/*",
+		"libraries/": "js/libraries/",
+		"pages/": "js/pages/",
+		"ui/": "js/ui/",
+		"store/": "js/store/",
+		"service/": "js/service/",
+		"util/": "js/util/"
 	},
 	packages: {
 		typescript: {
@@ -51,7 +50,10 @@ System.config({
 		"redux-logger": "npm:redux-logger@3.0.6.js",
 		"redux-promise": "npm:redux-promise@0.5.3.js",
 		"redux-socket.io": "npm:redux-socket.io@1.4.0.js",
-		"socket.io-client": "npm:socket.io-client@2.0.3.js"
+		"socket.io-client": "npm:socket.io-client@2.0.3.js",
+		"systemjs-hot-reloader": "npm:systemjs-hot-reloader@1.1.0.js",
+		"systemjs-hmr": "npm:systemjs-hmr@2.0.9.js",
+		"@hot": "@empty"
 	},
 	bundles: {
 		"libraries/libraries-dev.js": [
@@ -67,7 +69,8 @@ System.config({
 			"redux-actions",
 			"redux-promise",
 			"redux-socket.io",
-			"socket.io-client"
+			"socket.io-client",
+			"systemjs-hot-reloader"
 		]
 	}
 });

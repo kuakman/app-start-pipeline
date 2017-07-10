@@ -1,10 +1,10 @@
 /**
 *	SystemJS Configuration - Profile Test
-*	@author Patricio Ferreira <3dimentionar@gmail.com>
+*	@author kuakman <3dimentionar@gmail.com>
 **/
 System.config({
 	baseURL: '/',
-	defaultExtension: true,
+	defaultJSExtensions: false,
 	transpiler: "ts",
 	typescriptOptions: { tsconfig: true },
 	meta: {
@@ -21,7 +21,11 @@ System.config({
 		"github:*": "src/jspm/github/*",
 		"npm:*": "src/jspm/npm/*",
 		"libraries/": "src/js/libraries/",
-		"pages/": "src/js/pages/"
+		"pages/": "src/js/pages/",
+		"ui/": "src/js/ui/",
+		"store/": "src/js/store/",
+		"service/": "src/js/service/",
+		"util/": "src/js/util/"
 	},
 	packages: {
 		typescript: {
@@ -29,7 +33,11 @@ System.config({
 			meta: { "lib/typescript.js": { exports: "ts" } }
 		},
 		"pages": { "defaultExtension": "tsx" },
-		"test/js/pages": { defaultExtension: "tsx" }
+		"ui": { "defaultExtension": "tsx" },
+		"store": { "defaultExtension": "ts" },
+		"service": { "defaultExtension": "ts" },
+		"util": { "defaultExtension": "ts" },
+		"test/js/pages": { "defaultExtension": "tsx" }
 	},
 	map: {
 		"bluebird": "npm:bluebird@3.5.0.js",
@@ -47,7 +55,8 @@ System.config({
 		"redux-logger": "npm:redux-logger@3.0.6.js",
 		"redux-promise": "npm:redux-promise@0.5.3.js",
 		"redux-socket.io": "npm:redux-socket.io@1.4.0.js",
-		"socket.io-client": "npm:socket.io-client@2.0.3.js"
+		"socket.io-client": "npm:socket.io-client@2.0.3.js",
+		"@hot": "@empty"
 	},
 	bundles: {
 		"libraries/libraries-test.js": [

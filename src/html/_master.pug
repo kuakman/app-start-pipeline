@@ -1,0 +1,12 @@
+doctype html
+html(lang = "en")
+	head
+		block head
+		include common/_meta.pug
+		title #{title} - App Start Pipeline
+		include common/_scripts.pug
+	body
+		div(class = "container")
+		include common/_environment.pug
+		include common/_dev.pug
+		include common/_ga.pug

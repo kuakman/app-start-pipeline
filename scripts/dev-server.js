@@ -5,9 +5,7 @@
 module.exports = {
 	port: 3002,
 	open: false,
-	logLevel: 'silent',
-	files: ['**/*.{html,css,js,json,map}']
-	server: {
-		baseDir: './src'
-	}
+	logLevel: 'warn',
+	files: ['**/*.{html,css,js,json,map}'],
+	server: { baseDir: ['./', './src', './dist'] }
 };

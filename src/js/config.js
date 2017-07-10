@@ -4,7 +4,7 @@
 **/
 System.config({
 	baseURL: '/',
-	defaultExtension: true,
+	defaultJSExtensions: false,
 	transpiler: false,
 	meta: {
 		'pages/*': { format: 'register' },
