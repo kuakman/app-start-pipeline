@@ -4,14 +4,14 @@
 **/
 System.config({
 	baseURL: '/',
-	defaultJSExtensions: false,
+	defaultJSExtensions: true,
 	transpiler: false,
 	meta: {
-		'pages/*': { format: 'register', loader: "ts" },
-		'store/*': { format: 'register', loader: "ts" },
-		'service/*': { format: 'register', loader: "ts" },
-		'ui/*': { format: 'register', loader: "ts" },
-		'util/*': { format: 'register', loader: "ts" }
+		'pages/*': { format: 'register' },
+		'store/*': { format: 'register' },
+		'service/*': { format: 'register' },
+		'ui/*': { format: 'register' },
+		'util/*': { format: 'register' }
 	},
 	paths: {
 		"github:*": "jspm/github/*",
@@ -22,13 +22,6 @@ System.config({
 		"store/": "store/",
 		"service/": "service/",
 		"util/": "util/"
-	},
-	packages: {
-		"pages": { "defaultExtension": "tsx" },
-		"ui": { "defaultExtension": "tsx" },
-		"store": { "defaultExtension": "ts" },
-		"service": { "defaultExtension": "ts" },
-		"util": { "defaultExtension": "ts" }
 	},
 	map: {
 		"bluebird": "npm:bluebird@3.5.0.js",

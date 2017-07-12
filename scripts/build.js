@@ -1,5 +1,5 @@
 /**
-*	Gulp Task Release
+*	Gulp Task Build
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 let resolve = require('path').resolve;
@@ -37,6 +37,7 @@ var bundles = function(files, profile) {
 var systemjs = function(package) {
 	const { packages, baseURL } = package.jspm.directories;
 	fs.copySync(`${packages}/system-csp-production.js`, './dist/js/libraries/system-csp-production.js');
+	fs.copySync(`${packages}/system-csp-production.js.map`, './dist/js/libraries/system-csp-production.js.map');
 	fs.copySync(`${baseURL}/config.js`, './dist/js/config.js');
 };
 

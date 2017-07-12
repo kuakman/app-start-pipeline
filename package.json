@@ -82,6 +82,13 @@
       }
     },
     "dev": {
+	  "server": {
+  		"port": 3002,
+    	  "open": false,
+          "logLevel": "warn",
+          "files": ["**/*.{html,css,js,json,map,jpg,png,gif}"],
+          "server": { "baseDir": ["./", "./src", "./dist"] }
+  	  },
       "dependencies": {
         "bundles": "libraries + libraries-dev",
         "output": "src/js/libraries/libraries-dev.js",
@@ -100,6 +107,13 @@
       }
     },
     "prod": {
+	  "server": {
+    	  "port": 3002,
+      	  "open": false,
+          "logLevel": "error",
+          "files": ["**/*.{html,css,js,json,map,jpg,png,gif}"],
+          "server": { "baseDir": ["./dist"] }
+      },
       "dependencies": {
         "bundles": "libraries",
         "output": "src/js/libraries/libraries.js",
@@ -120,6 +134,9 @@
           "typescriptOptions": {
             "tsconfig": true
           },
+		  "meta": {
+		    "*": { "loader": "ts" }
+		  },
           "paths": {
             "typescript": "./node_modules/typescript",
             "ts": "./node_modules/plugin-typescript/lib/plugin.js",
@@ -132,7 +149,12 @@
                 "lib/typescript.js": {
                   "exports": "ts"
                 }
-              }
+			  },
+			  "pages": { "defaultExtension": "tsx" },
+	  		  "ui": { "defaultExtension": "tsx" },
+	  		  "store": { "defaultExtension": "ts" },
+	  		  "service": { "defaultExtension": "ts" },
+	  		  "util": { "defaultExtension": "ts" }
             }
           },
           "map": {

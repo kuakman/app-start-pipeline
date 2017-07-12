@@ -2,10 +2,6 @@
 *	Server Configuration
 *	@author kuakman <3dimentionar@gmail.com>
 **/
-module.exports = {
-	port: 3002,
-	open: false,
-	logLevel: 'warn',
-	files: ['**/*.{html,css,js,json,map}'],
-	server: { baseDir: ['./', './src', './dist'] }
-};
+let extend = require('extend');
+let pkg = extend(true, { profile: (process.env.profile || "dev") }, require('./package.json'));
+module.exports = pkg.environment[pkg.profile].server;
