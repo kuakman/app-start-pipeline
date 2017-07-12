@@ -24,21 +24,21 @@ module.exports = function (config) {
 			configFile: "./test/js/config-test.js",
 			useBundles: true,
 			serveFiles: [
-				{ pattern: path.resolve("src/jspm/*.+(map)"), watched: false, included: false, served: true },
-				{ pattern: path.resolve("src/jspm/**/*.+(json|map)"), watched: false, included: false, served: true },
+				{ pattern: path.resolve("src/js/jspm/*.+(map)"), watched: false, included: false, served: true },
+				{ pattern: path.resolve("src/js/jspm/**/*.+(json|map)"), watched: false, included: false, served: true },
 				{ pattern: path.resolve("test/js/*.js"), watched: true, included: false, served: false },
-				"src/js/**/*.+(ts|tsx|js|json)",
+				"src/js/!(jspm)/**/*.+(ts|tsx|js|json)",
 				"node_modules/typescript/lib/typescript.js",
 				"tsconfig.json"
 			],
 			includeFiles: [
-				"src/jspm/npm/bluebird@3.5.0/js/browser/bluebird.min.js",
+				"src/js/jspm/npm/bluebird@3.5.0/js/browser/bluebird.min.js",
 				"test/js/commons.js"
 			]
 		},
 		exclude: [],
 		preprocessors: {
-			'src/js/!(libraries)/**/*.+(ts|tsx)': ['systemjs-typescript', 'coverage']
+			'src/js/!(libraries|jspm)/**/*.+(ts|tsx)': ['systemjs-typescript', 'coverage']
 		},
 		reporters: ['spec', 'systemjs-coverage', 'coverage'],
 		coverageReporter: {

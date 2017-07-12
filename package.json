@@ -4,12 +4,13 @@
   "description": "Application Pipeline Starter",
   "main": "scripts/build.js",
   "scripts": {
-	"jspm": "jspm",
+    "jspm": "jspm",
+    "clean": "gulp clean -all",
     "watch": "chokidar-socket-emitter -l 9080",
-	"test": "cross-env profile=test gulp test",
+    "test": "cross-env profile=test gulp test",
     "dev": "cross-env profile=dev gulp dev",
     "prod": "cross-env profile=prod gulp prod",
-	"release": "cross-env profile=prod gulp release"
+    "release": "cross-env profile=prod gulp release"
   },
   "repository": {
     "type": "git",
@@ -58,58 +59,116 @@
     "run-sequence": "2.0.0",
     "sinon": "2.3.6",
     "typescript": "2.4.1",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "underscore.string": "3.3.4"
   },
   "environment": {
     "test": {
-      "bundles": "js/libraries + js/libraries-dev + js/libraries-test",
-      "output": "src/js/libraries/libraries-test.js",
-      "config": {
-        "defaultJSExtensions": true,
-        "map": {
-          "plugin-babel": "jspm/npm/systemjs-plugin-babel@0.0.25.js",
-          "systemjs-babel-build": "jspm/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+      "dependencies": {
+        "bundles": "libraries + libraries-dev + libraries-test",
+        "output": "src/js/libraries/libraries-test.js",
+        "config": {
+          "defaultJSExtensions": true,
+          "map": {
+            "plugin-babel": "jspm/npm/systemjs-plugin-babel@0.0.25.js",
+            "systemjs-babel-build": "jspm/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+          },
+          "transpiler": "plugin-babel"
         },
-        "transpiler": "plugin-babel"
-      },
-      "options": {
-        "mangle": false,
-        "normalize": true
+        "options": {
+          "mangle": false,
+          "normalize": true
+        }
       }
     },
     "dev": {
-      "bundles": "js/libraries + js/libraries-dev",
-      "output": "src/js/libraries/libraries-dev.js",
-      "config": {
-        "defaultJSExtensions": true,
-        "map": {
-          "plugin-babel": "jspm/npm/systemjs-plugin-babel@0.0.25.js",
-          "systemjs-babel-build": "jspm/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+      "dependencies": {
+        "bundles": "libraries + libraries-dev",
+        "output": "src/js/libraries/libraries-dev.js",
+        "config": {
+          "defaultJSExtensions": true,
+          "map": {
+            "plugin-babel": "jspm/npm/systemjs-plugin-babel@0.0.25.js",
+            "systemjs-babel-build": "jspm/npm/systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+          },
+          "transpiler": "plugin-babel"
         },
-        "transpiler": "plugin-babel"
-      },
-      "options": {
-        "mangle": false,
-        "normalize": true
+        "options": {
+          "mangle": false,
+          "normalize": true
+        }
       }
     },
     "prod": {
-      "bundles": "js/libraries",
-      "output": "src/js/libraries/libraries.js",
-      "config": {
-        "defaultJSExtensions": true
+      "dependencies": {
+        "bundles": "libraries",
+        "output": "src/js/libraries/libraries.js",
+        "config": {
+          "defaultJSExtensions": true,
+          "transpiler": false
+        },
+        "options": {
+          "minify": true,
+          "mangle": true,
+          "normalize": true
+        }
       },
-      "options": {
-        "minify": true,
-        "normalize": true
+      "code": {
+        "config": {
+          "defaultJSExtensions": true,
+          "transpiler": "ts",
+          "typescriptOptions": {
+            "tsconfig": true
+          },
+          "paths": {
+            "typescript": "./node_modules/typescript",
+            "ts": "./node_modules/plugin-typescript/lib/plugin.js",
+            "tsconfig.json": "./tsconfig.json"
+          },
+          "packages": {
+            "typescript": {
+              "main": "lib/typescript.js",
+              "meta": {
+                "lib/typescript.js": {
+                  "exports": "ts"
+                }
+              }
+            }
+          },
+          "map": {
+            "node_modules": "../../node_modules"
+          }
+        },
+        "options": {
+          "minify": true,
+          "mangle": true,
+          "normalize": true,
+          "sourceMaps": true,
+          "lowResSourceMaps": true,
+          "format": "esm",
+          "externals": [
+            "bluebird",
+            "bootstrap",
+            "jquery",
+            "less",
+            "react",
+            "react-dom",
+            "redux",
+            "immutable",
+            "redux-actions",
+            "redux-promise",
+            "redux-socket.io",
+            "socket.io-client"
+          ]
+        }
       }
     }
   },
   "jspm": {
     "directories": {
-      "baseURL": "src",
+      "baseURL": "src/js",
       "format": "esm",
-      "packages": "src/jspm"
+      "packages": "src/js/jspm"
     },
     "configFile": "src/jspm.js",
     "dependencies": {

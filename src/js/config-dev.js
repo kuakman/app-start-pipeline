@@ -17,8 +17,8 @@ System.config({
 	paths: {
 		typescript: "node_modules/typescript",
 		ts: "node_modules/plugin-typescript/lib/plugin.js",
-		"github:*": "jspm/github/*",
-		"npm:*": "jspm/npm/*",
+		"github:*": "js/jspm/github/*",
+		"npm:*": "js/jspm/npm/*",
 		"libraries/": "js/libraries/",
 		"pages/": "js/pages/",
 		"ui/": "js/ui/",

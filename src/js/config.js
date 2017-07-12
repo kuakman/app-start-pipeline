@@ -7,21 +7,21 @@ System.config({
 	defaultJSExtensions: false,
 	transpiler: false,
 	meta: {
-		'pages/*': { format: 'register' },
-		'store/*': { format: 'register' },
-		'service/*': { format: 'register' },
-		'ui/*': { format: 'register' },
-		'util/*': { format: 'register' }
+		'pages/*': { format: 'register', loader: "ts" },
+		'store/*': { format: 'register', loader: "ts" },
+		'service/*': { format: 'register', loader: "ts" },
+		'ui/*': { format: 'register', loader: "ts" },
+		'util/*': { format: 'register', loader: "ts" }
 	},
 	paths: {
-		"github:*": "src/jspm/github/*",
-		"npm:*": "src/jspm/npm/*",
-		"libraries/": "src/js/libraries/",
-		"pages/": "src/js/pages/",
-		"ui/": "src/js/ui/",
-		"store/": "src/js/store/",
-		"service/": "src/js/service/",
-		"util/": "src/js/util/"
+		"github:*": "jspm/github/*",
+		"npm:*": "jspm/npm/*",
+		"libraries/": "libraries/",
+		"pages/": "pages/",
+		"ui/": "ui/",
+		"store/": "store/",
+		"service/": "service/",
+		"util/": "util/"
 	},
 	packages: {
 		"pages": { "defaultExtension": "tsx" },
@@ -42,7 +42,8 @@ System.config({
 		"redux-actions": "npm:redux-actions@2.2.1.js",
 		"redux-promise": "npm:redux-promise@0.5.3.js",
 		"redux-socket.io": "npm:redux-socket.io@1.4.0.js",
-		"socket.io-client": "npm:socket.io-client@2.0.3.js"
+		"socket.io-client": "npm:socket.io-client@2.0.3.js",
+		"@hot": "@empty"
 	},
 	bundles: {
 		"libraries/libraries.js": [

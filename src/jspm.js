@@ -3,8 +3,8 @@ System.config({
   defaultJSExtensions: true,
   transpiler: false,
   paths: {
-    "github:*": "jspm/github/*",
-    "npm:*": "jspm/npm/*"
+    "github:*": "js/jspm/github/*",
+    "npm:*": "js/jspm/npm/*"
   },
 
   map: {

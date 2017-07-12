@@ -14,13 +14,14 @@ let args = parser.parse(process.argv.slice(3));
 /** Tasks **/
 gulp.task('clean', [], require('./scripts/clean')(pkg, args));
 gulp.task('libraries', [], require('./scripts/libraries')(pkg, args));
+gulp.task('html', [], require('./scripts/html')(pkg, args));
 gulp.task('karma', [], require('./scripts/karma')(pkg, args));
 gulp.task('server', [], require('./scripts/server')(pkg, args));
 
 /** Master Tasks **/
 gulp.task('test', function(callback) { sync('clean', 'libraries', 'karma', callback); });
-gulp.task('dev', function(callback) { sync('clean', 'libraries', 'server', callback); });
-gulp.task('prod', function(callback) { sync('clean', 'libraries', 'release', 'server', callback); });
+gulp.task('dev', function(callback) { sync('clean', 'libraries', 'html', 'server', callback); });
+gulp.task('prod', function(callback) { sync('clean', 'libraries', 'html', 'release', callback); });
 gulp.task('release', [], require('./scripts/release')(pkg, args));
 
 /** Default Task **/

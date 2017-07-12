@@ -4,3 +4,8 @@
 **/
 import * as HomePage from 'pages/home/home';
 import * as HomeStore from 'store/home/home';
+
+export default {
+	HomePage,
+	HomeStore
+};

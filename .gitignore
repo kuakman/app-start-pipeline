@@ -7,7 +7,7 @@ node_modules
 
 # App Specifics
 src/js/libraries
-src/jspm
+src/js/jspm
 dist
 coverage
 
