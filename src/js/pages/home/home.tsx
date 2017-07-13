@@ -6,6 +6,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HomeStore from 'store/home/home';
 import * as hot from '@hot';
 
 /**
@@ -31,6 +32,7 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@return {pages.home.HomePage}
 	**/
 	constructor(props?: object, attrs?: object) {
+		this.store = new HomeStore();
 		return super(props, attrs);
 	}
 

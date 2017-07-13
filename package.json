@@ -110,7 +110,7 @@
 	  "server": {
     	  "port": 3002,
       	  "open": false,
-          "logLevel": "error",
+          "logLevel": "warn",
           "files": ["**/*.{html,css,js,json,map,jpg,png,gif}"],
           "server": { "baseDir": ["./dist"] }
       },
@@ -129,14 +129,11 @@
       },
       "code": {
         "config": {
-          "defaultJSExtensions": true,
+          "defaultJSExtensions": false,
           "transpiler": "ts",
           "typescriptOptions": {
             "tsconfig": true
           },
-		  "meta": {
-		    "*": { "loader": "ts" }
-		  },
           "paths": {
             "typescript": "./node_modules/typescript",
             "ts": "./node_modules/plugin-typescript/lib/plugin.js",
@@ -149,25 +146,23 @@
                 "lib/typescript.js": {
                   "exports": "ts"
                 }
-			  },
-			  "pages": { "defaultExtension": "tsx" },
-	  		  "ui": { "defaultExtension": "tsx" },
-	  		  "store": { "defaultExtension": "ts" },
-	  		  "service": { "defaultExtension": "ts" },
-	  		  "util": { "defaultExtension": "ts" }
-            }
+			  }
+		    },
+			"pages": { "defaultExtension": "tsx", "meta": { "/*": { "format": "register", "loader": "ts" } } },
+			"ui": { "defaultExtension": "tsx", "meta": { "/*": { "format": "register", "loader": "ts" } } },
+			"store": { "defaultExtension": "ts", "meta": { "/*": { "format": "register", "loader": "ts" } } },
+			"service": { "defaultExtension": "ts", "meta": { "/*": { "format": "register", "loader": "ts" } } },
+			"util": { "defaultExtension": "ts", "meta": { "/*": { "format": "register", "loader": "ts" } } }
           },
           "map": {
             "node_modules": "../../node_modules"
           }
         },
         "options": {
-          "minify": true,
-          "mangle": true,
-          "normalize": true,
-          "sourceMaps": true,
-          "lowResSourceMaps": true,
+          "minify": false,
+          "mangle": false,
           "format": "esm",
+		  "normalize": true,
           "externals": [
             "bluebird",
             "bootstrap",

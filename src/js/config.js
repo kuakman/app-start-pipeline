@@ -3,25 +3,15 @@
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 System.config({
-	baseURL: '/',
-	defaultJSExtensions: true,
+	baseURL: '/js',
+	defaultJSExtensions: false,
 	transpiler: false,
-	meta: {
-		'pages/*': { format: 'register' },
-		'store/*': { format: 'register' },
-		'service/*': { format: 'register' },
-		'ui/*': { format: 'register' },
-		'util/*': { format: 'register' }
-	},
-	paths: {
-		"github:*": "jspm/github/*",
-		"npm:*": "jspm/npm/*",
-		"libraries/": "libraries/",
-		"pages/": "pages/",
-		"ui/": "ui/",
-		"store/": "store/",
-		"service/": "service/",
-		"util/": "util/"
+	packages: {
+		"pages": { meta: { "/*": { format: "register" } } },
+		"ui": { meta: { "/*": { format: "register" } } },
+		"store": { meta: { "/*": { format: "register" } } },
+		"service": { meta: { "/*": { format: "register" } } },
+		"util": { meta: { "/*": { format: "register" } } }
 	},
 	map: {
 		"bluebird": "npm:bluebird@3.5.0.js",

@@ -6,6 +6,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchStore from 'store/search/search';
 import * as hot from '@hot';
 
 /**
@@ -31,6 +32,7 @@ class SearchPage extends React.Component<IComponent, object> {
 	*	@return {pages.search.SearchPage}
 	**/
 	constructor(props?: object, attrs?: object) {
+		this.store = new SearchStore();
 		return super(props, attrs);
 	}
 
