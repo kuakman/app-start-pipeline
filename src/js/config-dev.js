@@ -8,6 +8,7 @@ System.config({
 	transpiler: "ts",
 	typescriptOptions: { tsconfig: true },
 	meta: {
+		"styles/*.less": { loader: "less" },
 		'pages/*': { format: 'register', loader: "ts" },
 		'store/*': { format: 'register', loader: "ts" },
 		'service/*': { format: 'register', loader: "ts" },
@@ -20,6 +21,7 @@ System.config({
 		"github:*": "js/jspm/github/*",
 		"npm:*": "js/jspm/npm/*",
 		"libraries/": "js/libraries/",
+		"styles/": "js/styles/",
 		"pages/": "js/pages/",
 		"ui/": "js/ui/",
 		"store/": "js/store/",

@@ -27,12 +27,13 @@ module.exports = function (config) {
 				{ pattern: path.resolve("src/js/jspm/*.+(map)"), watched: false, included: false, served: true },
 				{ pattern: path.resolve("src/js/jspm/**/*.+(json|map)"), watched: false, included: false, served: true },
 				{ pattern: path.resolve("test/js/*.js"), watched: true, included: false, served: false },
-				"src/js/!(jspm)/**/*.+(ts|tsx|js|json)",
+				"src/js/!(jspm)/**/*.+(ts|tsx|js|json|less)",
 				"node_modules/typescript/lib/typescript.js",
 				"tsconfig.json"
 			],
 			includeFiles: [
 				"src/js/jspm/npm/bluebird@3.5.0/js/browser/bluebird.min.js",
+				"src/js/jspm/npm/systemjs-less-plugin@2.0.0/less.browser.js",
 				"test/js/commons.js"
 			]
 		},

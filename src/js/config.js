@@ -7,8 +7,11 @@ System.config({
 	defaultJSExtensions: false,
 	transpiler: false,
 	paths: {
-		"github:*": "github/*",
-		"npm:*": "npm/*"
+		"github:*": "jspm/github/*",
+		"npm:*": "jspm/npm/*"
+	},
+	meta: {
+		"styles/*.less": { loader: "less" }
 	},
 	packages: {
 		"bundles": {
@@ -40,6 +43,7 @@ System.config({
 		"bluebird": "npm:bluebird@3.5.0.js",
 		"bootstrap": "github:twbs/bootstrap@3.3.7.js",
 		"jquery": "npm:jquery@3.2.1.js",
+		"less": "npm:systemjs-less-plugin@2.0.0.js",
 		"react": "npm:react@15.6.1.js",
 		"react-dom": "npm:react-dom@15.6.1.js",
 		"redux": "npm:redux@3.7.1.js",
@@ -55,6 +59,7 @@ System.config({
 			"bluebird",
 			"bootstrap",
 			"jquery",
+			"less",
 			"react",
 			"react-dom",
 			"redux",

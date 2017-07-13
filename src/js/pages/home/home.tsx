@@ -4,6 +4,7 @@
 **/
 import $ from 'jquery';
 import 'bootstrap';
+import 'styles/pages/home/home.less!';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HomeStore from 'store/home/home';

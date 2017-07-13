@@ -58,7 +58,6 @@
     "remap-istanbul": "0.9.5",
     "run-sequence": "2.0.0",
     "sinon": "2.3.6",
-    "systemjs-plugin-css": "0.1.35",
     "typescript": "2.4.1",
     "underscore": "1.8.3",
     "underscore.string": "3.3.4"
@@ -154,26 +153,32 @@
             "ts": "./node_modules/plugin-typescript/lib/plugin.js",
             "tsconfig.json": "./tsconfig.json"
           },
+		  "map": {
+		    "css": "jspm/github/systemjs/plugin-css@0.1.35",
+		    "less": "jspm/npm/systemjs-less-plugin@2.0.0"
+		  },
           "packages": {
             "typescript": {
               "main": "lib/typescript.js",
               "meta": {
-                  "lib/typescript.js": {
-                  	"exports": "ts"
-                  }
+                "lib/typescript.js": {
+                  "exports": "ts"
+                }
               }
             },
-			"bundles": {
-				"defaultExtension": "tsx",
-				"meta": {
-					"/*": {
-						"format": "register",
-						"loader": "ts"
-					}
-				}
-			},
+			"css": { "main": "css.js" },
+			"less": { "main": "less.js" },
+            "bundles": {
+              "defaultExtension": "tsx",
+              "meta": {
+                "/*": {
+                  "format": "register",
+                  "loader": "ts"
+                }
+              }
+            },
             "pages": {
-			  "defaultExtension": "tsx",
+              "defaultExtension": "tsx",
               "meta": {
                 "/*": {
                   "format": "register",
@@ -182,7 +187,7 @@
               }
             },
             "ui": {
-			  "defaultExtension": "tsx",
+              "defaultExtension": "tsx",
               "meta": {
                 "/*": {
                   "format": "register",
@@ -191,7 +196,7 @@
               }
             },
             "store": {
-			  "defaultExtension": "ts",
+              "defaultExtension": "ts",
               "meta": {
                 "/*": {
                   "format": "register",
@@ -200,7 +205,7 @@
               }
             },
             "service": {
-			  "defaultExtension": "ts",
+              "defaultExtension": "ts",
               "meta": {
                 "/*": {
                   "format": "register",
@@ -209,7 +214,7 @@
               }
             },
             "util": {
-			  "defaultExtension": "ts",
+              "defaultExtension": "ts",
               "meta": {
                 "/*": {
                   "format": "register",
@@ -253,6 +258,7 @@
       "bootstrap": "github:twbs/bootstrap@3.3.7",
       "immutable": "npm:immutable@3.8.1",
       "jquery": "npm:jquery@3.2.1",
+      "less": "npm:systemjs-less-plugin@2.0.0",
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
       "react": "npm:react@15.6.1",
       "react-dom": "npm:react-dom@15.6.1",
