@@ -3,8 +3,8 @@ System.config({
   defaultJSExtensions: true,
   transpiler: false,
   paths: {
-    "github:*": "js/jspm/github/*",
-    "npm:*": "js/jspm/npm/*"
+    "github:*": "jspm/github/*",
+    "npm:*": "jspm/npm/*"
   },
 
   map: {
@@ -13,7 +13,6 @@ System.config({
     "enzyme": "npm:enzyme@2.9.1",
     "immutable": "npm:immutable@3.8.1",
     "jquery": "npm:jquery@3.2.1",
-    "less": "npm:systemjs-less-plugin@2.0.0",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
     "react": "npm:react@15.6.1",
     "react-addons-test-utils": "npm:react-addons-test-utils@15.6.0",
@@ -709,9 +708,6 @@ System.config({
     },
     "npm:systemjs-hot-reloader@1.1.0": {
       "systemjs-hmr": "npm:systemjs-hmr@2.0.9"
-    },
-    "npm:systemjs-less-plugin@2.0.0": {
-      "css": "github:systemjs/plugin-css@0.1.35"
     },
     "npm:ua-parser-js@0.7.13": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"

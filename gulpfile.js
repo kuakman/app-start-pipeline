@@ -22,8 +22,10 @@ gulp.task('build', [], require('./scripts/build')(pkg, args));
 /** Master Tasks **/
 gulp.task('test', function(callback) { sync('clean', 'libraries', 'karma', callback); });
 gulp.task('dev', function(callback) { sync('clean', 'libraries', 'html', 'server', callback); });
-gulp.task('release', function(callback) { sync('clean', 'libraries', 'html', 'build', callback); });
 gulp.task('prod', function(callback) { sync('release', 'server', callback); });
+
+/** Mostly used by CI Server to deployment production code**/
+gulp.task('release', function(callback) { sync('clean', 'libraries', 'html', 'build', callback); });
 
 /** Default Task **/
 gulp.task('default', function(callback) { sync('dev', callback); });

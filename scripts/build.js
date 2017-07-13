@@ -49,8 +49,8 @@ var bundles = function(files, profile) {
 	return Promise.all(_.map(normalizePath(files), _.bind(bundle, this, profile))).then((results) => {
 		_.map(results, (output) => {
 			var normalized = output.modules;
-			//var normalized = _.chain(output.modules).map(toJS).value();
 			systemBundles[toJS(normalized[0])] = _.rest(normalized);
+			return output;
 		});
 	});
 };

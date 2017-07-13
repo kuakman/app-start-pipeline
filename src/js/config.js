@@ -6,18 +6,40 @@ System.config({
 	baseURL: '/js',
 	defaultJSExtensions: false,
 	transpiler: false,
+	paths: {
+		"github:*": "github/*",
+		"npm:*": "npm/*"
+	},
 	packages: {
-		"pages": { meta: { "/*": { format: "register" } } },
-		"ui": { meta: { "/*": { format: "register" } } },
-		"store": { meta: { "/*": { format: "register" } } },
-		"service": { meta: { "/*": { format: "register" } } },
-		"util": { meta: { "/*": { format: "register" } } }
+		"bundles": {
+			defaultExtension: "js",
+			meta: { "/*": { format: "register" } }
+		},
+		"pages": {
+			defaultExtension: "tsx",
+			meta: { "/*": { format: "register" } }
+		},
+		"ui": {
+			defaultExtension: "tsx",
+			meta: { "/*": { format: "register" } }
+		},
+		"store": {
+			defaultExtension: "ts",
+			meta: { "/*": { format: "register" } }
+		},
+		"service": {
+			defaultExtension: "ts",
+			meta: { "/*": { format: "register" } }
+		},
+		"util": {
+			defaultExtension: "ts",
+			meta: { "/*": { format: "register" } }
+		}
 	},
 	map: {
 		"bluebird": "npm:bluebird@3.5.0.js",
 		"bootstrap": "github:twbs/bootstrap@3.3.7.js",
 		"jquery": "npm:jquery@3.2.1.js",
-		"less": "npm:systemjs-less-plugin@2.0.0.js",
 		"react": "npm:react@15.6.1.js",
 		"react-dom": "npm:react-dom@15.6.1.js",
 		"redux": "npm:redux@3.7.1.js",
@@ -33,7 +55,6 @@ System.config({
 			"bluebird",
 			"bootstrap",
 			"jquery",
-			"less",
 			"react",
 			"react-dom",
 			"redux",

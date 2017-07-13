@@ -1,0 +1,9 @@
+extends ../_master.pug
+
+block head
+	- var title = "Search";
+
+block bootstrap
+	| System.import('pages/search/search').then(function(SearchPage) {
+	| 	SearchPage.default.bootstrap();
+	| });

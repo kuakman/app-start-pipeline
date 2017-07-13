@@ -58,6 +58,7 @@
     "remap-istanbul": "0.9.5",
     "run-sequence": "2.0.0",
     "sinon": "2.3.6",
+    "systemjs-plugin-css": "0.1.35",
     "typescript": "2.4.1",
     "underscore": "1.8.3",
     "underscore.string": "3.3.4"
@@ -82,13 +83,21 @@
       }
     },
     "dev": {
-	  "server": {
-  		"port": 3002,
-    	  "open": false,
-          "logLevel": "warn",
-          "files": ["**/*.{html,css,js,json,map,jpg,png,gif}"],
-          "server": { "baseDir": ["./", "./src", "./dist"] }
-  	  },
+      "server": {
+        "port": 3002,
+        "open": false,
+        "logLevel": "warn",
+        "files": [
+          "**/*.{html,css,js,json,map,jpg,png,gif}"
+        ],
+        "server": {
+          "baseDir": [
+            "./",
+            "./src",
+            "./dist"
+          ]
+        }
+      },
       "dependencies": {
         "bundles": "libraries + libraries-dev",
         "output": "src/js/libraries/libraries-dev.js",
@@ -107,12 +116,18 @@
       }
     },
     "prod": {
-	  "server": {
-    	  "port": 3002,
-      	  "open": false,
-          "logLevel": "warn",
-          "files": ["**/*.{html,css,js,json,map,jpg,png,gif}"],
-          "server": { "baseDir": ["./dist"] }
+      "server": {
+        "port": 3002,
+        "open": false,
+        "logLevel": "warn",
+        "files": [
+          "**/*.{html,css,js,json,map,jpg,png,gif}"
+        ],
+        "server": {
+          "baseDir": [
+            "./dist"
+          ]
+        }
       },
       "dependencies": {
         "bundles": "libraries",
@@ -129,7 +144,7 @@
       },
       "code": {
         "config": {
-          "defaultJSExtensions": false,
+          "defaultJSExtensions": true,
           "transpiler": "ts",
           "typescriptOptions": {
             "tsconfig": true
@@ -143,31 +158,76 @@
             "typescript": {
               "main": "lib/typescript.js",
               "meta": {
-                "lib/typescript.js": {
-                  "exports": "ts"
+                  "lib/typescript.js": {
+                  	"exports": "ts"
+                  }
+              }
+            },
+			"bundles": {
+				"defaultExtension": "tsx",
+				"meta": {
+					"/*": {
+						"format": "register",
+						"loader": "ts"
+					}
+				}
+			},
+            "pages": {
+			  "defaultExtension": "tsx",
+              "meta": {
+                "/*": {
+                  "format": "register",
+                  "loader": "ts"
                 }
-			  }
-		    },
-			"pages": { "defaultExtension": "tsx", "meta": { "/*": { "format": "register", "loader": "ts" } } },
-			"ui": { "defaultExtension": "tsx", "meta": { "/*": { "format": "register", "loader": "ts" } } },
-			"store": { "defaultExtension": "ts", "meta": { "/*": { "format": "register", "loader": "ts" } } },
-			"service": { "defaultExtension": "ts", "meta": { "/*": { "format": "register", "loader": "ts" } } },
-			"util": { "defaultExtension": "ts", "meta": { "/*": { "format": "register", "loader": "ts" } } }
-          },
-          "map": {
-            "node_modules": "../../node_modules"
+              }
+            },
+            "ui": {
+			  "defaultExtension": "tsx",
+              "meta": {
+                "/*": {
+                  "format": "register",
+                  "loader": "ts"
+                }
+              }
+            },
+            "store": {
+			  "defaultExtension": "ts",
+              "meta": {
+                "/*": {
+                  "format": "register",
+                  "loader": "ts"
+                }
+              }
+            },
+            "service": {
+			  "defaultExtension": "ts",
+              "meta": {
+                "/*": {
+                  "format": "register",
+                  "loader": "ts"
+                }
+              }
+            },
+            "util": {
+			  "defaultExtension": "ts",
+              "meta": {
+                "/*": {
+                  "format": "register",
+                  "loader": "ts"
+                }
+              }
+            }
           }
         },
         "options": {
-          "minify": false,
-          "mangle": false,
+          "minify": true,
+          "mangle": true,
           "format": "esm",
-		  "normalize": true,
+          "normalize": true,
           "externals": [
             "bluebird",
             "bootstrap",
             "jquery",
-            "less",
             "react",
             "react-dom",
             "redux",
@@ -193,7 +253,6 @@
       "bootstrap": "github:twbs/bootstrap@3.3.7",
       "immutable": "npm:immutable@3.8.1",
       "jquery": "npm:jquery@3.2.1",
-      "less": "npm:systemjs-less-plugin@2.0.0",
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
       "react": "npm:react@15.6.1",
       "react-dom": "npm:react-dom@15.6.1",
