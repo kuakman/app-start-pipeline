@@ -30,7 +30,7 @@ var saveBundles = function() {
 };
 
 var output = function(file) {
-	return `./dist/js/${toJS(file)}`;
+	return `./dist/js/bundles/${toJS(file)}`;
 };
 
 var normalizePath = function(files) {
@@ -49,7 +49,7 @@ var bundles = function(files, profile) {
 	return Promise.all(_.map(normalizePath(files), _.bind(bundle, this, profile))).then((results) => {
 		_.map(results, (output) => {
 			var normalized = output.modules;
-			systemBundles[toJS(normalized[0])] = _.rest(normalized);
+			systemBundles[toJS(`bundles/${normalized[0]}`)] = _.rest(normalized);
 			return output;
 		});
 	});

@@ -11,7 +11,8 @@ System.config({
 		"npm:*": "jspm/npm/*"
 	},
 	meta: {
-		"styles/*.less": { loader: "less" }
+		"styles/*.less": { loader: "less" },
+		"bootstrap-css/*.css": { loader: "css" }
 	},
 	packages: {
 		"bundles": {
@@ -44,6 +45,7 @@ System.config({
 		"bootstrap": "github:twbs/bootstrap@3.3.7.js",
 		"jquery": "npm:jquery@3.2.1.js",
 		"less": "npm:systemjs-less-plugin@2.0.0.js",
+		"css": "github:systemjs/plugin-css@0.1.35.js",
 		"react": "npm:react@15.6.1.js",
 		"react-dom": "npm:react-dom@15.6.1.js",
 		"redux": "npm:redux@3.7.1.js",
@@ -60,6 +62,7 @@ System.config({
 			"bootstrap",
 			"jquery",
 			"less",
+			"css",
 			"react",
 			"react-dom",
 			"redux",

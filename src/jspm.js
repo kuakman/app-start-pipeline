@@ -10,6 +10,7 @@ System.config({
   map: {
     "bluebird": "npm:bluebird@3.5.0",
     "bootstrap": "github:twbs/bootstrap@3.3.7",
+    "css": "github:systemjs/plugin-css@0.1.35",
     "enzyme": "npm:enzyme@2.9.1",
     "immutable": "npm:immutable@3.8.1",
     "jquery": "npm:jquery@3.2.1",

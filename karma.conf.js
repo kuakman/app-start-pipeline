@@ -29,6 +29,8 @@ module.exports = function (config) {
 				{ pattern: path.resolve("test/js/*.js"), watched: true, included: false, served: false },
 				"src/js/!(jspm)/**/*.+(ts|tsx|js|json|less)",
 				"node_modules/typescript/lib/typescript.js",
+				"src/js/jspm/github/twbs/bootstrap@3.3.7/css/*.css",
+				"src/js/jspm/github/twbs/bootstrap@3.3.7/fonts/*.*",
 				"tsconfig.json"
 			],
 			includeFiles: [

@@ -61,7 +61,7 @@ class SearchPage extends React.Component<IComponent, object> {
 	*	@type {object}
 	**/
 	static defaultProps: object = {
-		message: "Hello World!"
+		message: "Hello World"
 	};
 
 	/**

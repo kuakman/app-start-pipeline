@@ -9,6 +9,7 @@ System.config({
 	typescriptOptions: { tsconfig: true },
 	meta: {
 		"styles/*.less": { loader: "less" },
+		'bootstrap-css/*.css': { loader: "css" },
 		'pages/*': { format: 'register', loader: "ts" },
 		'store/*': { format: 'register', loader: "ts" },
 		'service/*': { format: 'register', loader: "ts" },
@@ -18,6 +19,7 @@ System.config({
 	paths: {
 		typescript: "node_modules/typescript",
 		ts: "node_modules/plugin-typescript/lib/plugin.js",
+		"bootstrap-css/": "js/jspm/github/twbs/bootstrap@3.3.7/css/",
 		"github:*": "js/jspm/github/*",
 		"npm:*": "js/jspm/npm/*",
 		"libraries/": "js/libraries/",
@@ -33,6 +35,7 @@ System.config({
 			main: "lib/typescript.js",
 			meta: { "lib/typescript.js": { exports: "ts" } }
 		},
+		"css": { main: "css.js" },
 		"pages": { "defaultExtension": "tsx" },
 		"ui": { "defaultExtension": "tsx" },
 		"store": { "defaultExtension": "ts" },
@@ -44,6 +47,7 @@ System.config({
 		"bootstrap": "github:twbs/bootstrap@3.3.7.js",
 		"jquery": "npm:jquery@3.2.1.js",
 		"less": "npm:systemjs-less-plugin@2.0.0.js",
+		"css": "github:systemjs/plugin-css@0.1.35",
 		"react": "npm:react@15.6.1.js",
 		"react-dom": "npm:react-dom@15.6.1.js",
 		"redux": "npm:redux@3.7.1.js",

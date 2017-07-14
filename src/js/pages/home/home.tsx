@@ -4,6 +4,7 @@
 **/
 import $ from 'jquery';
 import 'bootstrap';
+import 'bootstrap-css/bootstrap.min.css!';
 import 'styles/pages/home/home.less!';
 import React from 'react';
 import ReactDOM from 'react-dom';

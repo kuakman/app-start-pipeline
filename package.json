@@ -2,7 +2,7 @@
   "name": "app-start-pipeline",
   "version": "1.0.0",
   "description": "Application Pipeline Starter",
-  "main": "scripts/build.js",
+  "main": "gulpfile.js",
   "scripts": {
     "jspm": "jspm",
     "clean": "gulp clean -all",
@@ -87,8 +87,11 @@
         "open": false,
         "logLevel": "warn",
         "files": [
-          "**/*.{html,css,js,json,map,jpg,png,gif}"
+          "**/*.{html,css,js,ts,tsx,json,map,jpg,png,gif}"
         ],
+        "snippetOptions": {
+          "ignorePaths": "**/*.{ts,tsx}"
+        },
         "server": {
           "baseDir": [
             "./",
@@ -151,12 +154,13 @@
           "paths": {
             "typescript": "./node_modules/typescript",
             "ts": "./node_modules/plugin-typescript/lib/plugin.js",
-            "tsconfig.json": "./tsconfig.json"
+            "tsconfig.json": "./tsconfig.json",
+            "bootstrap-css/": "jspm/github/twbs/bootstrap@3.3.7/css/"
           },
-		  "map": {
-		    "css": "jspm/github/systemjs/plugin-css@0.1.35",
-		    "less": "jspm/npm/systemjs-less-plugin@2.0.0"
-		  },
+          "map": {
+            "css": "jspm/github/systemjs/plugin-css@0.1.35",
+            "less": "jspm/npm/systemjs-less-plugin@2.0.0"
+          },
           "packages": {
             "typescript": {
               "main": "lib/typescript.js",
@@ -166,8 +170,12 @@
                 }
               }
             },
-			"css": { "main": "css.js" },
-			"less": { "main": "less.js" },
+            "css": {
+              "main": "css.js"
+            },
+            "less": {
+              "main": "less.js"
+            },
             "bundles": {
               "defaultExtension": "tsx",
               "meta": {
@@ -256,6 +264,7 @@
     "dependencies": {
       "bluebird": "npm:bluebird@3.5.0",
       "bootstrap": "github:twbs/bootstrap@3.3.7",
+      "css": "github:systemjs/plugin-css@0.1.35",
       "immutable": "npm:immutable@3.8.1",
       "jquery": "npm:jquery@3.2.1",
       "less": "npm:systemjs-less-plugin@2.0.0",
