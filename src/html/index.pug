@@ -4,6 +4,4 @@ block head
 	- var title = "Home";
 
 block bootstrap
-	| System.import('pages/home/home').then(function(HomePage) {
-	| 	HomePage.default.bootstrap();
-	| });
+	| System.import('pages/home/bootstrap');

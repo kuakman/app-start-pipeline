@@ -3,7 +3,7 @@
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 System.config({
-	baseURL: '/',
+	baseURL: '/js',
 	defaultJSExtensions: false,
 	transpiler: "ts",
 	typescriptOptions: { tsconfig: true },
@@ -17,18 +17,19 @@ System.config({
 		'util/*': { format: 'register', loader: "ts" }
 	},
 	paths: {
-		typescript: "node_modules/typescript",
-		ts: "node_modules/plugin-typescript/lib/plugin.js",
-		"bootstrap-css/": "js/jspm/github/twbs/bootstrap@3.3.7/css/",
-		"github:*": "js/jspm/github/*",
-		"npm:*": "js/jspm/npm/*",
-		"libraries/": "js/libraries/",
-		"styles/": "js/styles/",
-		"pages/": "js/pages/",
-		"ui/": "js/ui/",
-		"store/": "js/store/",
-		"service/": "js/service/",
-		"util/": "js/util/"
+		typescript: "../node_modules/typescript",
+		ts: "../node_modules/plugin-typescript/lib/plugin.js",
+		"tsconfig.json": "../tsconfig.json",
+		"bootstrap-css/": "jspm/github/twbs/bootstrap@3.3.7/css/",
+		"github:*": "jspm/github/*",
+		"npm:*": "jspm/npm/*",
+		"libraries/": "libraries/",
+		"styles/": "styles/",
+		"pages/": "pages/",
+		"ui/": "ui/",
+		"store/": "store/",
+		"service/": "service/",
+		"util/": "util/"
 	},
 	packages: {
 		typescript: {

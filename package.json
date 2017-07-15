@@ -89,9 +89,9 @@
         "files": [
           "**/*.{html,css,js,ts,tsx,json,map,jpg,png,gif}"
         ],
-        "snippetOptions": {
-          "ignorePaths": "**/*.{ts,tsx}"
-        },
+		"watchOptions": {
+			"ignored": ["node_modules", "**/*.{ts,tsx}"]
+		},
         "server": {
           "baseDir": [
             "./",

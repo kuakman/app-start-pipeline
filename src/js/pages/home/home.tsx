@@ -3,13 +3,10 @@
 *	@author kuakman <3dimentionar@gmail.com>
 **/
 import $ from 'jquery';
-import 'bootstrap';
-import 'bootstrap-css/bootstrap.min.css!';
 import 'styles/pages/home/home.less!';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HomeStore from 'store/home/home';
-import * as hot from '@hot';
 
 /**
 *	Interface IComponent
@@ -33,9 +30,8 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@param {object} [attrs] Component Attributes
 	*	@return {pages.home.HomePage}
 	**/
-	constructor(props?: object, attrs?: object) {
-		this.store = new HomeStore();
-		return super(props, attrs);
+	constructor(props?: object) {
+		return super(props);
 	}
 
 	/**
@@ -53,17 +49,18 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@return {any}
 	**/
 	render(): any {
-		return (<div className = "home">{this.props.message}</div>);
+		return (<div className = "home-page">
+			{this.state ? this.state.message : this.props.message}
+			<button onClick = {this.onClick.bind(this)}>Click Me!</button>
+		</div>);
 	}
 
-	/**
-	*	Default Properties
-	*	@static
-	*	@property defaultProps
-	*	@type {object}
-	**/
+	onClick() {
+		this.setState({ message: 'State has changed!' });
+	}
+
 	static defaultProps: object = {
-		message: "Hello World!"
+		message: "Hello World"
 	};
 
 	/**
@@ -71,21 +68,19 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@static
 	*	@param {object} [props] Component Properties
 	*	@param {object} [attrs] Component Attributes
-	*	@return {Function}
+	*	@return {pages.home.HomePage}
 	**/
-	static bootstrap(props?: object, attrs?: object): Function {
-		ReactDOM.render(<HomePage {...props} />, $('.container')[0]);
-		return this;
+	static bootstrap(props?: object, attrs?: object): HomePage {
+		return ReactDOM.render(<HomePage {...props} />, $('.container')[0]);
 	}
 
 }
 
 /**
-*	HMR Hot Reload
+*	HMR Unload Hook
 **/
-export function __reload(HomePage) {
+export const __unload = () => {
 	ReactDOM.unmountComponentAtNode($('.container')[0]);
-    HomePage.default.bootstrap(hot._state);
-}
+};
 
 export default HomePage;
