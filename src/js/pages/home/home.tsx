@@ -49,7 +49,7 @@ class HomePage extends React.Component<IComponent, object> {
 	*	@return {any}
 	**/
 	render(): any {
-		return (<div className = "home-page">
+		return (<div className = "home">
 			{this.state ? this.state.message : this.props.message}
 			<button onClick = {this.onClick.bind(this)}>Click Me!</button>
 		</div>);

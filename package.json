@@ -36,6 +36,7 @@
     "argsparser": "0.0.7",
     "chai": "4.0.2",
     "chokidar-socket-emitter": "0.6.0",
+    "compression": "1.7.0",
     "cross-env": "5.0.1",
     "extend": "3.0.1",
     "fs-extra": "3.0.1",
@@ -89,9 +90,12 @@
         "files": [
           "**/*.{html,css,js,ts,tsx,json,map,jpg,png,gif}"
         ],
-		"watchOptions": {
-			"ignored": ["node_modules", "**/*.{ts,tsx}"]
-		},
+        "watchOptions": {
+          "ignored": [
+            "node_modules",
+            "**/*.{ts,tsx}"
+          ]
+        },
         "server": {
           "baseDir": [
             "./",
